@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --shadow_width1:25px;
+    --shadow_width2:50px;
+    --shadow_width3:75px;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+    background-position: top center;
+    padding: 50px 25px;
+    text-align: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    position: relative;
+}
+.header {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid hsl(217, 16%, 45%);
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: auto;
+}
+.score {
+    padding: 10px 25px;
+    border-radius: 5px;
+    background-color: white;
+}
+.score p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: hsl(229, 64%, 46%);
+}
+.score h2 {
+    font-size: 55px;
+    color: hsl(229, 25%, 31%);
+}
+.home {
+    padding: 30px 10px;
+    background-image: url(images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+.button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    padding: 20px;
+    margin: 30px;
+    cursor: pointer;
+    z-index: 1;
+    
+}
+.button > div {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.paper {
+    background-color:  hsl(230, 89%, 65%);
+    box-shadow: inset 0px -10px  hsl(230, 89%, 62%);
+}
+.home .paper:hover,.win  .paper{
+    box-shadow: inset 0px -10px  hsl(230, 89%, 62%),0px 0px 0 var(--shadow_width1) rgba(255,255,255,.1),0px 0px 0 var(--shadow_width2)  rgba(255,255,255,.1),0px 0px 0 var(--shadow_width3) rgba(255,255,255,.1) ;
+}
+.rock {
+    background-color:  hsl(349, 70%, 56%);
+    box-shadow: inset 0px -10px  hsl(349, 71%, 52%);
+}
+.home .rock:hover,.win  .rock{
+    box-shadow: inset 0px -10px  hsl(349, 71%, 52%),0px 0px 0 var(--shadow_width1) rgba(255,255,255,.1),0px 0px 0 var(--shadow_width2)  rgba(255,255,255,.1),0px 0px 0 var(--shadow_width3) rgba(255,255,255,.1) ;
+}
+.scissors {
+    background-color:  hsl(40, 84%, 53%);
+    box-shadow: inset 0px -10px  hsl(39, 89%, 49%);
+}
+.home .scissors:hover,.win .scissors {
+    box-shadow: inset 0px -10px  hsl(39, 89%, 49%),0px 0px 0 var(--shadow_width1) rgba(255,255,255,.1),0px 0px 0 var(--shadow_width2)  rgba(255,255,255,.1),0px 0px 0 var(--shadow_width3) rgba(255,255,255,.1) ;
+}
+.rule_button {
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid  hsl(217, 16%, 45%);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.3);
+    display: none;
+}
+
+.modal .rules {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    background-color: white;
+    padding:25px;
+    position: relative;
+}
+.rules h2 {
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    width: 10px;
+    color: hsl(229, 25%, 31%);
+}
+.rules img {
+    margin: auto;
+    width: 100%;
+}
+.close {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+.step2 {
+    display: flex;                
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    position: relative;
+}
+.comp_choice {
+    background-color: hsl(0, 11%, 74%);
+}
+.result {
+   margin: 0 50px ; 
+   width: 0;
+   overflow: hidden;
+}
+.result .play_again {
+    background-color: white;
+    padding: 10px 20px;
+    color: hsl(237, 49%, 15%);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+}
+.status {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 45px;
+    margin: 15px 0;
+}
+.title_box h3{
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    font-size: 20px;
+    
+}
+.title_box {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+/* .align {
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+@media (max-width:600px){
+    :root {
+        --shadow_width1:15px;
+    --shadow_width2:30px;
+    --shadow_width3:45px;
+    }
+    body {
+        padding: 25px;
+    }
+    .header img {
+        width: 100px;
+        padding: 5px;
+    }
+    .score p {
+        font-size: 12px;
+    }
+    .score h2 {
+        font-size: 40px;
+    }
+    .home {
+        padding: 50px 0;
+        background-size: 70%;
+        border: 1px solid red;
+    }
+    .button {
+        width: 100px;
+        height: 100px;
+        padding: 15px;  
+        margin: 20px;
+    }
+    .modal .rules {
+        max-width: 300px;
+    }
+    .button img {
+        width: 80%;
+    }
+    .result {
+        position: absolute;
+        top: 100%;
+        justify-content: space-between;
+    }
+    .rule_button {
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .title_box {
+        flex-direction: column;
+    }
+    .step2 {
+        padding: 50px 20px;
+        justify-content: space-around;
+    }
+    .title_box h3 {
+        font-size: 16px;
+    }
+}
+
+
+.show {
+    display: flex;
+}
+.hide {
+    display: none;
+}
