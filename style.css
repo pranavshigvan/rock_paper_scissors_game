@@ -242,6 +242,7 @@ body {
     }
     .rule_button {
         left: 50%;
+        bottom: 100px;
         transform: translate(-50%);
     }
     .title_box {
